@@ -1,0 +1,41 @@
+
+@import "lib-reset.css";
+@import "lib-mixins.less";
+.page_mall{
+    width: 750px;
+    height: 1334px;
+    background: url(../images/bg_mall.jpg) no-repeat center;
+    background-size: cover;
+}
+.header{
+    width: 730px;
+    margin: 2px auto 0;
+    overflow: hidden;
+    .btn{
+        width: 72px;
+        height: 72px;
+        &.btn_back{
+            background: url(../images/icon_back.png) no-repeat center;
+            background-size: cover;
+        }
+        &.btn_question{
+            background: url(../images/icon_question.png) no-repeat center;
+            background-size: cover;
+        }
+        &.btn_list_redemption_record{
+            margin: 0 23px;
+            background: url(../images/icon_list_redemption_record.png) no-repeat center;
+            background-size: cover;
+        }
+    }
+    .my_balance{
+        width: 197px;
+        height: 55px;
+        background: url(../images/my_balance.png) no-repeat center;
+        background-size: cover;
+    }
+    .fr{
+        display: flex;
+        align-items: center;
+    }
+}
