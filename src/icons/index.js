@@ -11,3 +11,4 @@ const requireAll = requireContext => requireContext.keys().map(requireContext)
 // 否则需单个引入   import '@/src/icons/qq.svg; //引入图标
 const req = require.context('./svg', false, /\.svg$/)
 requireAll(req)
+ 
