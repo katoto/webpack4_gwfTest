@@ -9,10 +9,11 @@ module.exports = merge(common, {
     //设置基本目录结构
     contentBase: "./dist",
     //服务器的IP地址，可以使用IP也可以使用localhost
-    host: "localhost",
+    host: "192.168.50.19",
+    open: true,
     //服务端压缩是否开启
     compress: true,
     //配置服务端口号
-    port: 8090
+    port: 7890
   }
 });

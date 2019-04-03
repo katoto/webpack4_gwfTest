@@ -49,3 +49,21 @@
     -ms-user-select: @arguments;
     user-select: @arguments;
 }
+.placeholdercolor(@color:#fff,@fontSize:16px){
+    input::-webkit-input-placeholder{
+        color: @color;
+        font-size:@fontSize;
+    }
+    input::-moz-placeholder{   /* Mozilla Firefox 19+ */
+        color: @color;
+        font-size:@fontSize;
+    }
+    input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+        color: @color;
+        font-size:@fontSize;
+    }
+    input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
+        color: @color;
+        font-size:@fontSize;
+    }
+}
