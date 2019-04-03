@@ -2,8 +2,10 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const multiPage = require("./multi.page");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin"); //提取css文件
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')  //压缩css
-
+const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin"); //压缩css
+function resolve(dir) {
+  return path.join(__dirname, "..", dir);
+}
 module.exports = {
   //   entry: {
   //     index: "./src/js/index.js",
@@ -88,10 +90,17 @@ module.exports = {
       filename: "css/[name].[contenthash:8].css" //生成八位hash
     }),
     new OptimizeCssAssetsPlugin({
-        assetNameRegExp: /\.css$/g, 
-        cssProcessor: require('cssnano'), //用于优化\最小化CSS的CSS处理器，默认为cssnano
-        cssProcessorOptions: { safe: true, discardComments: { removeAll: true } }, //传递给cssProcessor的选项，默认为{}
-        canPrint: true                    //一个布尔值，指示插件是否可以将消息打印到控制台，默认为true
-    }),
-  ]
+      assetNameRegExp: /\.css$/g,
+      cssProcessor: require("cssnano"), //用于优化\最小化CSS的CSS处理器，默认为cssnano
+      cssProcessorOptions: { safe: true, discardComments: { removeAll: true } }, //传递给cssProcessor的选项，默认为{}
+      canPrint: true //一个布尔值，指示插件是否可以将消息打印到控制台，默认为true
+    })
+  ],
+  resolve: {
+    extensions: [".js", ".vue", ".json"],
+    alias: {
+      vue$: "vue/dist/vue.esm.js",
+      "@": resolve("src")
+    }
+  }
 };
