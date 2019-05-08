@@ -9,7 +9,7 @@ module.exports = merge(common, {
     //设置基本目录结构
     contentBase: "./dist",
     //服务器的IP地址，可以使用IP也可以使用localhost
-    host: "192.168.50.19",
+    host: "192.168.50.47",
     open: true,
     //服务端压缩是否开启
     compress: true,
